@@ -5,31 +5,23 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "relay-compiler --validate && tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "relay": "relay-compiler"
   },
-  "relay": {
-    "src": "./src",
-    "schema": "./src/schema.graphql",
-    "language": "typescript",
-    "eagerEsModules": true,
-    "exclude": [
-      "**/node_modules/**",
-      "**/__mocks__/**",
-      "**/__generated__/**"
-    ]
-  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-relay": "^15.0.0"
+    "react-relay": "^15.0.0",
+    "relay-runtime": "^15.0.0"
   },
   "devDependencies": {
     "@types/node": "^18.16.3",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
+    "@types/react-relay": "^14.1.3",
+    "@types/relay-runtime": "^14.1.10",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
     "@vitejs/plugin-react-swc": "^3.0.0",
